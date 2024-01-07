@@ -1,0 +1,19 @@
+package MultiThread;
+
+import java.util.concurrent.CompletableFuture;
+import java.util.stream.IntStream;
+
+public class EvenAndOddPrintByExService {
+
+	public static void main(String[] args) {
+		IntStream.range(0, 10).forEach(num -> {
+			CompletableFuture<Integer> oddCompletebleFuture = CompletableFuture.completedFuture(num)
+					.thenApplyAsync(x -> {
+						if (x % 2 != 0) {
+							System.out.println("Thred Name: " + Thread.currentThread().getName() + " value" + x);
+						}
+						return num;
+					});
+		});
+	}
+}

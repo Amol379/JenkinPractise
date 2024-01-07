@@ -1,0 +1,28 @@
+package streams;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class EmployeeDao {
+
+	public static List<Employee> getEmployees(){
+		List<Employee> employees = new ArrayList<>();
+		employees.add(new Employee(1, "amol", "Desh", 6000.00, Arrays.asList("project1","project3"), 001));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 002));
+		employees.add(new Employee(2, "Ravindra", "Rathore", 7500.00, Arrays.asList("project2","project4"), 003));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 002));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 003));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 002));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 001));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 003));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 003));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 004));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 005));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 003));
+		employees.add(new Employee(2, "Aparna", "Desh1", 7000.00, Arrays.asList("project1","project2"), 001));
+		
+		
+		return employees;
+	}
+}

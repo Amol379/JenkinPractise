@@ -1,0 +1,8 @@
+package streams;
+
+public class TestStreams {
+public static void main(String[] args) {
+	long count = EmployeeDao.getEmployees().stream().count();
+	System.out.println(count);
+}
+}

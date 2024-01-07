@@ -1,0 +1,5 @@
+package functional;
+
+public class FunDemo {
+Account.super.pay();
+}

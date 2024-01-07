@@ -1,0 +1,7 @@
+package streams;
+
+public class TestStreams {
+public static void main(String[] args) {
+	EmployeeDao.getEmployees().stream().forEach(System.out::println);
+}
+}

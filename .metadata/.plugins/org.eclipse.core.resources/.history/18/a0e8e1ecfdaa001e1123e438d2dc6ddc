@@ -1,0 +1,11 @@
+package functional;
+
+public class FunDemo implements Account{
+	void m() {
+		
+	}
+	public static void main(String[] args) {
+		
+		
+	}
+}

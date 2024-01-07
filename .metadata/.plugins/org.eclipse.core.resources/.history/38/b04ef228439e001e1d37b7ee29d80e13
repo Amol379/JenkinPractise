@@ -1,0 +1,22 @@
+import java.io.File;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Test1 {
+	public static void main(String[] args) {
+
+		/*
+		 * File file = new File("F:\\Directory"); String name =
+		 * file.getAbsoluteFile().getName(); System.out.println();
+		 */
+
+		String str = "abc bsd";
+		  Map<String, Long> collect = Stream.of(str.split(""))
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream()
+				.filter(m -> m.getValue() > 1).map(Map.Entry::getKey).collect(Collectors.groupingBy(a->a, Collectors.counting()));
+		System.out.println(collect);
+	}
+}

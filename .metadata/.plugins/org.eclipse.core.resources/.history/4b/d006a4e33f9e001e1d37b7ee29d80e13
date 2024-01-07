@@ -1,0 +1,18 @@
+public class Test {
+	public static void main(String[] args) {
+
+		int[] arr = { 1, 2, 3, 5, 8, 3 };
+		/*
+		 * List<int[]> collect =
+		 * Arrays.asList(arr).stream().sorted(Comparator.comparingInt(a -> (int)
+		 * a).reversed()) .collect(Collectors.toList());
+		 * collect.forEach(System.out::println);
+		 */
+
+		for (int i = arr.length; i > 0; i--) {
+			System.out.println(i);
+		}
+		System.out.println(arr[1]);
+	}
+
+}

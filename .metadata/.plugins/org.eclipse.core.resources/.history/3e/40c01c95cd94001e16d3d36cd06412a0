@@ -1,0 +1,29 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class TestDemo {
+
+	public static void main(String[] args) {
+
+		String[] str = { "aaryanna", "aayanna", "airianna", "alassandra", "allanna", "allannah", "allessandra",
+				"allianna", "allyanna", "anastaisa", "anastashia", "anastasia", "annabella", "annabelle", "annebelle" };
+
+		List<String> strList = Arrays.asList(str);
+
+		List<String> listWStrtWithAA = strList.stream().filter(e -> e.startsWith("aa")).
+		// collect(Collectors.groupingBy(Function.identity(),Collectors.counting())));
+				collect(Collectors.toList());
+		 System.out.println(listWStrtWithAA);
+		  Map<String[], Long> collect = listWStrtWithAA.stream().map(e->e.split("")).distinct()//flatMap(w->Arrays.stream(w))
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		collect.entrySet().forEach(e->System.out.println(collect.get(e)));
+		/*
+		 * Sample Output aaryanna - 4 aayanna - 3 Explaination:- aaryanna has four
+		 * distinct characters: 'a', 'n', 'r', and 'y'. aayanna has three distinct
+		 * characters: 'a', 'n', and 'y'.
+		 */
+	}
+}

@@ -1,0 +1,21 @@
+package streams;
+
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class StingsProg {
+
+	public static void main(String[] args) {
+		String str = "amol is on the way way is going to pune amol is going to pune";
+		Map<String, Long> frequencyOfString = Stream.of(str.split(" "))
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		System.out.println(frequencyOfString);
+		System.out.println("****************************************************************");
+
+		String str1 = "Welcome to office Amol";
+		Stream<String> charecterdata = Stream.of(str1.split("")).forEach(System.out::println);;
+		System.out.println();
+	}
+}

@@ -1,0 +1,11 @@
+import java.io.File;
+import java.util.List;
+
+public class Test1 {
+public static void main(String[] args) {
+	
+	File file  =  new File("F:\\Directory");
+	File name = file.getCanonicalFile();
+			System.out.println(name);
+}
+}

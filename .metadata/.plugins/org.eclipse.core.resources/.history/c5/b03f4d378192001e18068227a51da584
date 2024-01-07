@@ -1,0 +1,30 @@
+package streams;
+
+import java.io.ObjectInputStream.GetField;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class TestStreams {
+	public static void main(String[] args) {
+		long count = EmployeeDao.getEmployees().stream().count();
+		System.out.println(count);
+
+		// find employee whose salary more than 5k
+		List<Employee> findSalgtfive = EmployeeDao.getEmployees().stream().filter(e -> e.getSalary() > 5000)
+				.collect(Collectors.toList());
+		System.out.println(findSalgtfive);
+
+		// find employee whose sal is max by dept
+
+		Map<Integer, Employee> maxSalByDept = EmployeeDao.getEmployees().stream()
+				.collect(Collectors.groupingBy(Employee::getDeptId, Collectors.collectingAndThen(
+						Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)), e -> e.get())));
+		maxSalByDept.entrySet().forEach(System.out::println);
+
+		EmployeeDao.getEmployees().stream()
+				.collect(Collectors.groupingBy(Employee::getDeptId, Collectors.collectingAndThen(
+						Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)), emp -> emp.get()))).entrySet().forEach(System.out::println);;
+	}
+}

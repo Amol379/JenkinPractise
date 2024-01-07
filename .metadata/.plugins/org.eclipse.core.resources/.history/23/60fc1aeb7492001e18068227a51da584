@@ -1,0 +1,22 @@
+package streams;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class TestStreams {
+public static void main(String[] args) {
+	long count = EmployeeDao.getEmployees().stream().count();
+	System.out.println(count);
+	
+	//find employee whose salary more than 5k
+	List<Employee> findSalgtfive = EmployeeDao.getEmployees().stream().filter(e->e.getSalary()>5000).collect(Collectors.toList());
+	System.out.println(findSalgtfive);
+	
+	//find employee whose sal is more than 5 k and its belong to project2
+	
+	EmployeeDao.getEmployees().stream().map(e->e.getProjects()).flatMap(e->e.stream()).filter(emp -> emp.getSalary()>5000 && emp.getProjects().equals("project2")).forEach(System.out::println);;
+	
+	
+	//filter(emp -> emp.getSalary()>5000 && emp.getProjects().equals("project2")).collect(Collectors.toList()));
+}
+}

@@ -1,0 +1,26 @@
+package streams;
+
+import java.util.Map;
+import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class StingsProg {
+
+	public static void main(String[] args) {
+		String str = "amol is on the way way is going to pune amol is going to pune";
+		Map<String, Long> frequencyOfString = Stream.of(str.split(" "))
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		System.out.println(frequencyOfString);
+		System.out.println("****************************************************************");
+
+		String str1 = "Welcome to office Amol";
+		long vowelsCount = str1.toLowerCase().chars().filter(ch -> ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u').count();
+		System.out.println(vowelsCount);
+		
+		 str1.toLowerCase().chars().filter(ch -> ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u').collect(Collectors.groupingBy(Function.identity(),Collectors.counting());
+		
+		
+	}
+}

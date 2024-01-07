@@ -1,0 +1,29 @@
+package MultiThread;
+
+public class EvenAndOddPrintBy2Thread implements Runnable{
+	
+	int count =1;
+	Object object;
+	
+	@Override
+	public void run() {
+		
+		while(count<=10) {
+			if(count%2==0 && Thread.currentThread().getName().equals("even")) {
+				synchronized (object) {
+					System.out.println("Thread Name :"+Thread.currentThread().getName() +"value :" +count);
+				}
+				count++;
+				
+			}
+		}
+		
+		
+	}
+	
+public static void main(String[] args) {
+	
+}
+
+
+}
